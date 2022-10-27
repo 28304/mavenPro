@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/.idea/SSM.iml" filepath="$PROJECT_DIR$/.idea/SSM.iml" />
+      <module fileurl="file://$PROJECT_DIR$/mybatis/mybatis.iml" filepath="$PROJECT_DIR$/mybatis/mybatis.iml" />
+      <module fileurl="file://$PROJECT_DIR$/mybatis-mbg/mybatis-mbg.iml" filepath="$PROJECT_DIR$/mybatis-mbg/mybatis-mbg.iml" />
+      <module fileurl="file://$PROJECT_DIR$/spring/spring.iml" filepath="$PROJECT_DIR$/spring/spring.iml" />
+      <module fileurl="file://$PROJECT_DIR$/spring-jdbcTemplate/spring-jdbcTemplate.iml" filepath="$PROJECT_DIR$/spring-jdbcTemplate/spring-jdbcTemplate.iml" />
+      <module fileurl="file://$PROJECT_DIR$/spring-mvc-annotation/spring-mvc-annotation.iml" filepath="$PROJECT_DIR$/spring-mvc-annotation/spring-mvc-annotation.iml" />
+      <module fileurl="file://$PROJECT_DIR$/spring-mvc-axios/spring-mvc-axios.iml" filepath="$PROJECT_DIR$/spring-mvc-axios/spring-mvc-axios.iml" />
+      <module fileurl="file://$PROJECT_DIR$/springMVC/springMVC.iml" filepath="$PROJECT_DIR$/springMVC/springMVC.iml" />
+      <module fileurl="file://$PROJECT_DIR$/ssm-conformity/ssm-conformity.iml" filepath="$PROJECT_DIR$/ssm-conformity/ssm-conformity.iml" />
+    </modules>
+  </component>
+</project>

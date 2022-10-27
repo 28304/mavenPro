@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="CompilerConfiguration">
+    <annotationProcessing>
+      <profile name="Maven default annotation processors profile" enabled="true">
+        <sourceOutputDir name="target/generated-sources/annotations" />
+        <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
+        <outputRelativeToContentRoot value="true" />
+        <module name="mybatis-mbg" />
+        <module name="spring-mvc-axios" />
+        <module name="mybatis" />
+        <module name="ssm-conformity" />
+        <module name="springMVC" />
+        <module name="spring" />
+        <module name="spring-jdbcTemplate" />
+        <module name="spring-mvc-annotation" />
+      </profile>
+    </annotationProcessing>
+    <bytecodeTargetLevel>
+      <module name="mybatis" target="1.8" />
+      <module name="mybatis-mbg" target="1.8" />
+      <module name="spring" target="1.8" />
+      <module name="spring-jdbcTemplate" target="1.8" />
+      <module name="spring-mvc-annotation" target="1.8" />
+      <module name="spring-mvc-axios" target="1.8" />
+      <module name="springMVC" target="1.8" />
+      <module name="ssm" target="1.8" />
+      <module name="ssm-conformity" target="1.8" />
+    </bytecodeTargetLevel>
+  </component>
+</project>

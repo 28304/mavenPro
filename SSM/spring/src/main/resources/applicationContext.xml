@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:util="http://www.springframework.org/schema/util"
+       xmlns:p="http://www.springframework.org/schema/p"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd http://www.springframework.org/schema/util https://www.springframework.org/schema/util/spring-util.xsd">
+    <!--        配置一个bean对象，将对象交给IOC容器管理
+    scope:设置对象为单例（singleton）还是多例（prototype），默认单例-->
+    <bean id="helloworld" class="com.exer.pojo.HelloWorld" scope="prototype"></bean>
+
+<!--    <bean id="stu" class="com.exer.pojo.Stu">-->
+<!--        <property name="sid" value="100"></property>-->
+<!--        <property name="sname">-->
+<!--            <value><![CDATA[<张三>]]></value>-->
+<!--        </property>-->
+<!--        <property name="age" value="18"></property>-->
+<!--        <property name="gender" value="男"></property>-->
+<!--    </bean>-->
+
+<!--    <bean id="stu2" class="com.exer.pojo.Stu">-->
+<!--        <constructor-arg value="1001"></constructor-arg>-->
+<!--        <constructor-arg value="1001"></constructor-arg>-->
+<!--        <constructor-arg value="1001"></constructor-arg>-->
+<!--        <constructor-arg value="1001"></constructor-arg>-->
+<!--    </bean>-->
+
+    <bean id="stu" class="com.exer.pojo.Stu">
+        <property name="sid" value="100"></property>
+        <property name="sname">
+            <value><![CDATA[<张三>]]></value>
+        </property>
+        <property name="age" value="18"></property>
+        <property name="gender" value="男"></property>
+<!--        引用外部bean-->
+<!--        <property name="clazz" ref="clazz"></property>-->
+<!--&lt;!&ndash;        对引用外部bean进行赋值，若不赋值则默认外部bean的属性&ndash;&gt;-->
+<!--        <property name="clazz.cid" value="222"></property>-->
+<!--        <property name="clazz.cname" value="2班"></property>-->
+
+<!--        内部bean-->
+        <property name="clazz">
+            <bean id="clazzInner" class="com.exer.pojo.Clazz">
+                <property name="cid" value="222"></property>
+                <property name="cname" value="2班"></property>
+            </bean>
+        </property>
+        <property name="hobby">
+            <array>
+                <value>抽烟</value>
+                <value>喝酒</value>
+            </array>
+        </property>
+<!--        Map方式1，内部Map-->
+<!--        <property name="teacherMap">-->
+<!--            <map>-->
+<!--                <entry key="101" value-ref="teacher"></entry>-->
+<!--            </map>-->
+<!--        </property>-->
+<!--        Map方式2，外部Map-->
+        <property name="teacherMap" ref="teacherMap"></property>
+    </bean>
+
+    <bean id="clazz" class="com.exer.pojo.Clazz">
+        <property name="cid" value="111"></property>
+        <property name="cname" value="1班"></property>
+<!--        list方式2，外部list-->
+        <property name="stus" ref="stuList"></property>
+<!--        list方式1，内部list-->
+<!--        <property name="stus">-->
+<!--            <list >-->
+<!--                <ref bean="stu"></ref>-->
+<!--                <ref bean="stu"></ref>-->
+<!--            </list>-->
+<!--        </property>-->
+    </bean>
+
+    <bean id="teacher" class="com.exer.pojo.Teacher">
+        <property name="tid" value="101"></property>
+        <property name="tname" value="aaaa"></property>
+    </bean>
+
+    <util:list id="stuList">
+        <ref bean="stu"></ref>
+    </util:list>
+    <util:map id="teacherMap">
+        <entry key="101" value-ref="teacher"></entry>
+    </util:map>
+
+<!--    p命名空间-->
+    <bean id="pNamespace" class="com.exer.pojo.PNamespace"
+          p:sid="1005" p:sname="李四" p:teacherMap-ref="teacherMap"></bean>
+</beans>

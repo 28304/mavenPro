@@ -1,0 +1,14 @@
+<component name="ArtifactManager">
+  <artifact type="war" name="ssm-conformity:war">
+    <output-path>$PROJECT_DIR$/ssm-conformity/target</output-path>
+    <properties id="maven-jee-properties">
+      <options>
+        <module>ssm-conformity</module>
+        <packaging>war</packaging>
+      </options>
+    </properties>
+    <root id="archive" name="ssm-conformity-1.0-SNAPSHOT.war">
+      <element id="artifact" artifact-name="ssm-conformity:war exploded" />
+    </root>
+  </artifact>
+</component>

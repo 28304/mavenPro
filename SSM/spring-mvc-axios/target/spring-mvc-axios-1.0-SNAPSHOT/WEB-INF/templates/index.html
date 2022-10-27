@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="zh" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+
+</head>
+<body>
+    <div id="app">
+        <h1>index.html</h1>
+        <input type="button" value="测试springMVC处理ajax请求" @click="testAjax()"><br>
+        <input type="button" value="测试@Response处理ajax请求" @click="testResponseBody()"><br>
+        <input type="button" value="测试Request接收json格式的数据" @click="testRequestBody()"><br>
+    </div>
+<script type="text/javascript" th:src="@{/static/js/vue.js}"></script>
+<script type="text/javascript" th:src="@{/static/js/axios.min.js}"></script>
+<script type="text/javascript">
+
+    /*
+    * axios({
+            url:"",
+            method:"",
+            params:{},
+            data:{},
+        }).then(response=>{
+        });
+        默认格式
+    * */
+
+    new Vue({
+        el:"#app",
+        methods:{
+            testAjax(){
+                axios.post(
+                    "/springMVC/test/ajax?id=1001",
+                    {username:"admin",password:123456},
+                ).then(resp=>{
+                    console.log(resp.data)
+                })
+            },
+            testResponseBody(){
+                axios.post(
+                    "/springMVC/test/ajaxResponseBody?id=1001",
+                    {username:"admin",password:123456},
+                ).then(resp=>{
+                    console.log(resp.data)
+                })
+            },
+            testRequestBody(){
+              axios.post(
+                  "/springMVC/test/ajaxRequestBody",
+                  {username:"admin",password:123456},
+              ).then(resp=>{
+                  console.log(resp.data)
+              })
+            },
+        },
+    });
+</script>
+</body>
+</html>

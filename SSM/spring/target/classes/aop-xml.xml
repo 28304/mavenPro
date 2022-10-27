@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xmlns:aop="http://www.springframework.org/schema/aop"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd http://www.springframework.org/schema/context https://www.springframework.org/schema/context/spring-context.xsd http://www.springframework.org/schema/aop https://www.springframework.org/schema/aop/spring-aop.xsd">
+    <context:component-scan base-package="com.exer.aop.xml,com.exer.proxy"></context:component-scan>
+    <aop:config>
+        <aop:pointcut id="pointcut" expression="execution(* com.exer.proxy.CalculatorImpl.*(..))"/>
+        <aop:aspect ref="loggerAspect">
+            <aop:before method="beforeAdviceMethod" pointcut-ref="pointcut"></aop:before>
+            <aop:after method="afterAdviceMethod" pointcut-ref="pointcut"></aop:after>
+            <aop:after-returning method="AfterReturningAdviceMethod" returning="ret" pointcut-ref="pointcut"></aop:after-returning>
+            <aop:after-throwing method="afterThrowingAdviceMethod" throwing="ex" pointcut-ref="pointcut"></aop:after-throwing>
+            <aop:around method="aroundAdviceMethod" pointcut-ref="pointcut"></aop:around>
+        </aop:aspect>
+        <aop:aspect ref="validateAspect" order="1">
+            <aop:before method="beforeAdviceMethod" pointcut-ref="pointcut"></aop:before>
+        </aop:aspect>
+    </aop:config>
+</beans>

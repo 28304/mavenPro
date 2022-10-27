@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.exer.mapper.DynamicSQLMapper">
+    <!--    mapper接口和映射文件中要保证两个一致
+        1.mapper接口的全类名要和namespace一致
+        2.mapper接口中的方法名要和映射文件中的sql的id保持一致   -->
+<!--    List<Emp> getEmpByCondition(Emp emp);-->
+    <select id="getEmpByCondition" resultType="emp">
+        select * from t_emp where 1=1
+        <if test=""></if>
+    </select>
+</mapper>

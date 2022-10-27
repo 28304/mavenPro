@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="zh" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>首页</title>
+</head>
+<body>
+    <h1>index.html</h1>
+<a th:href="@{/hello}">跳转到success</a><br>
+<a th:href="@{/abc}">测试@RequestMapping的method（以设置为get请求）属性</a><br>
+<form th:action="@{/abc}" method="post">
+    <input type="submit" value="测试@RequestMapping的method属性：post请求">
+</form><br>
+<a th:href="@{/abc?username=admin}">测试@RequestMapping的params属性</a><br>
+<a th:href="@{/abc(username='admin')}">测试@RequestMapping的params属性</a><br>
+<a th:href="@{/aba/test/ant}">测试@RequestMapping对ant格式路径的支持</a><br>
+<a th:href="@{/test/rest/admin/999}">测试@RequestMapping:value值rest格式</a><br>
+    <hr>
+<form th:action="@{/param/pojo}" method="get">
+    用户名称：<input type="text" name="username"><br>
+    用户密码：<input type="password" name="password"><br>
+    <input type="submit" value="登录"><br>
+</form>
+    <hr>
+<a th:href="@{/test/mav}">测试通过ModelAndView向请求域中共享数据</a><br>
+<a th:href="@{/test/model}">测试通过Model向请求域中共享数据</a><br>
+<a th:href="@{/test/modelMap}">测试通过ModelMap向请求域中共享数据</a><br>
+<a th:href="@{/test/map}">测试通过Map向请求域中共享数据</a><br>
+<a th:href="@{/test/session}">测试向会话域中共享数据</a><br>
+<a th:href="@{/test/application}">测试向应用域中共享数据</a><br>
+    <hr>
+<a th:href="@{/test/view/thymeleafView}">测试Spring视图thymeleafView</a><br>
+<a th:href="@{/test/view/forward}">测试Spring转发视图</a><br>
+<a th:href="@{/test/view/redirect}">测试SpringRedirect</a><br>
+    <hr>
+<a th:href="@{/user}">查询所有用户信息</a><br>
+<a th:href="@{/user/1}">根据id查询用户信息</a><br>
+<form th:action="@{/user/}" method="post">
+    <input type="submit" value="添加用户信息">
+</form>
+<form th:action="@{/user/}" method="post">
+    <input type="hidden" name="_method" value="put">
+    <input type="submit" value="修改用户信息">
+</form>
+<form th:action="@{/user/1}" method="post">
+    <input type="hidden" name="_method" value="delete">
+    <input type="submit" value="删除用户信息">
+</form>
+<hr>
+    <a th:href="@{/employee}">查询所有的员工信息</a>
+</body>
+</html>

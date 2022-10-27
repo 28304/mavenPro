@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="FrameworkDetectionExcludesConfiguration">
+    <file type="web" url="file://$PROJECT_DIR$/spring-mvc-annotation" />
+    <file type="web" url="file://$PROJECT_DIR$/spring-mvc-axios" />
+    <file type="web" url="file://$PROJECT_DIR$/springMVC" />
+    <file type="web" url="file://$PROJECT_DIR$/ssm-conformity" />
+  </component>
+  <component name="JavaScriptSettings">
+    <option name="languageLevel" value="ES6" />
+  </component>
+  <component name="MavenProjectsManager">
+    <option name="originalFiles">
+      <list>
+        <option value="$PROJECT_DIR$/mybatis/pom.xml" />
+        <option value="$PROJECT_DIR$/spring/pom.xml" />
+        <option value="$PROJECT_DIR$/spring-jdbcTemplate/pom.xml" />
+        <option value="$PROJECT_DIR$/mybatis-mbg/pom.xml" />
+        <option value="$PROJECT_DIR$/springMVC/pom.xml" />
+        <option value="$PROJECT_DIR$/spring-mvc-axios/pom.xml" />
+        <option value="$PROJECT_DIR$/spring-mvc-annotation/pom.xml" />
+        <option value="$PROJECT_DIR$/ssm-conformity/pom.xml" />
+      </list>
+    </option>
+  </component>
+  <component name="ProjectRootManager" version="2" languageLevel="JDK_11" default="false" project-jdk-name="11" project-jdk-type="JavaSDK">
+    <output url="file://$PROJECT_DIR$/out" />
+  </component>
+</project>

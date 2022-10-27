@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.exer.mapper.UserMapper">
+<!--    mapper接口和映射文件中要保证两个一致
+        1.mapper接口的全类名要和namespace一致
+        2.mapper接口中的方法名要和映射文件中的sql的id保持一致   -->
+
+<!--    int insertUser();-->
+<!--    <insert id="insertUser">-->
+<!--        insert into t_user values(null,'admin','123456',18,'男','123@123')-->
+<!--    </insert>-->
+<!--    void updateUser();-->
+    <update id="updateUser">
+        update t_user set username='root',password='123456789' where id = 2
+    </update>
+<!--    Integer deleteUser();-->
+    <delete id="deleteUser">
+        delete from t_user where id=7
+    </delete>
+<!--    User getUserById();-->
+<!--    resultMap:自定义映射，处理一对多或多对一的java类型
+        resultType:设置结果类型-->
+    <select id="getUserById" resultType="com.exer.pojo.User">
+        select * from t_user where id = 1
+    </select>
+<!--    List<User> getAllUser();-->
+    <select id="getAllUser" resultType="User">
+        select * from t_user
+    </select>
+<!--    User getUserByUsername(String username);-->
+    <select id="getUserByUsername" resultType="User">
+        select * from t_user where username = #{username}
+    </select>
+<!--    User checkLogin(String username,String password);-->
+<!--    若有多个参数mybatis会把参数存放到map集合中,
+        以agr0为key,arg1为key...的方式和param1为key,param2为key...的方式-->
+    <select id="checkLogin" resultType="User">
+        select * from t_user where username = #{arg0} and password = #{arg1}
+    </select>
+<!--    User checkLoginByMap(Map<String,Object> map);-->
+    <select id="checkLoginByMap" resultType="User">
+        select * from t_user where username = #{username} and password = #{password}
+    </select>
+<!--    int insertUser(User user);-->
+    <insert id="insertUser">
+        insert into t_user values(null,#{username},#{password},#{age},#{gender},#{email})
+    </insert>
+<!--    User checkLoginByParam(@Param("username") String username,@Param("password") String password);-->
+    <select id="checkLoginByParam" resultType="User">
+        select * from t_user where username = #{username} and password = #{password}
+    </select>
+</mapper>
